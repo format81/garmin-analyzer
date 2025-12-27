@@ -190,9 +190,9 @@ class FITParser {
       const bytes = new Uint8Array(this.data.buffer, this.pos, field.size);
       this.pos += field.size;
       let str = '';
-      for (const byte of bytes) {
-        if (byte === 0) break;
-        str += String.fromCharCode(byte);
+      for (let i = 0; i < bytes.length; i++) {
+        if (bytes[i] === 0) break;
+        str += String.fromCharCode(bytes[i]);
       }
       return str;
     }
