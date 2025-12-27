@@ -2,7 +2,8 @@
 
 import { useCallback, useRef } from 'react';
 import { Download, Upload } from 'lucide-react';
-import { downloadSessionAsFile, importSession, Session } from '@/lib/storage';
+import { downloadSessionAsFile, importSession } from '@/lib/storage';
+import { Session } from '@/lib/types';
 
 interface SessionButtonsProps {
   onSessionLoaded?: () => void;
