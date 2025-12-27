@@ -174,7 +174,8 @@ class FITParser {
       fields: {},
     };
 
-    for (const field of def.fields) {
+    for (let i = 0; i < def.fields.length; i++) {
+      const field = def.fields[i];
       const value = this.readField(field, def.littleEndian);
       record.fields[field.fieldDefNum] = value;
     }
@@ -418,7 +419,8 @@ export async function POST(request: NextRequest): Promise<NextResponse<ParseResp
     const errors: string[] = [];
     const warnings: string[] = [];
 
-    for (const file of files) {
+    for (let fileIndex = 0; fileIndex < files.length; fileIndex++) {
+      const file = files[fileIndex];
       try {
         // Decode base64
         const binaryString = atob(file.content);
