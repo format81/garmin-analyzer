@@ -49,8 +49,8 @@ export interface Activity {
 export interface Lap {
   index: number;
   startTime: string;
-  totalTime: number;
-  distance: number;
+  totalTime: number | null;
+  distance: number | null;
   avgHeartRate: number | null;
   maxHeartRate: number | null;
   avgPace: number | null;
